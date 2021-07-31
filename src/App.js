@@ -1,7 +1,11 @@
 import "./App.css";
+import HowTo from './HowTo';
 
 function App() {
-  return <div className="App">2048</div>;
+  return <div className="App">
+  <HowTo/>
+  
+  </div>;
 }
 
 export default App;
