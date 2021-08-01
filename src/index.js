@@ -9,6 +9,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      {/* providing the store to the react app */}
       <Provider store={store}>
         <App />
       </Provider>
