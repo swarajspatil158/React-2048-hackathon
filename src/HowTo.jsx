@@ -16,6 +16,7 @@ export default function HowTo() {
       <div className="box">
         <div className="container">
           <div className="form">
+            <h3 className="title">2048</h3>
             <h2>How to Play</h2>
 
             <FaGamepad color="rgba(255, 255, 255, 0.5)" size="3vh"/>
