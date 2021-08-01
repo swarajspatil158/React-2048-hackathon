@@ -11,10 +11,7 @@ const Cell = ({ number }) => (
 );
 
 const GameBoard = () => {
-  const game = useSelector((state) => state.gameBoard);
-  const board = game.board;
-  const score = game.score;
-  console.log(score);
+  const board = useSelector((state) => state.gameBoard).board;
   const dispatch = useDispatch();
 
   const onKeyDown = (e) => {
