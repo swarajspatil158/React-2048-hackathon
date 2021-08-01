@@ -7,13 +7,6 @@ export default function HowTo() {
         <>
             <section>
       <div className="box">
-        <div className="square" >32</div>
-        <div className="square" >64</div>
-        <div className="square" >8</div>
-        <div className="square" >2</div>
-        <div className="square" >4</div>
-        <div className="square" >16</div>
-
         <div className="container">
           <div className="form">
             <h2>How to Play</h2>
