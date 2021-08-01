@@ -10,4 +10,10 @@ const moveRight = (board) => moveAction(board, "RIGHT");
 const moveUp = (board) => moveAction(board, "UP");
 const moveDown = (board) => moveAction(board, "DOWN");
 
-export { moveDown, moveLeft, moveRight, moveUp };
+const newGame = () => {
+  return {
+    type: "NEW_GAME",
+  };
+};
+
+export { moveDown, moveLeft, moveRight, moveUp, newGame };
