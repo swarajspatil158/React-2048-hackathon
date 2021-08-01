@@ -5,9 +5,7 @@
   justify-content: center;
   align-items: center;
   font-family: "Lucida Sans Unicode";
-  background: #43cea2;
-  background: -webkit-linear-gradient(to left, #43cea2, #185a9d);
-  background: linear-gradient(to left, #43cea2, #185a9d);
+  background-color:rgba(64,180,249) ;
 }
 .game-board {
   display: flex;

@@ -43,17 +43,17 @@ const GameBoard = () => {
     return () => window.removeEventListener("keydown", onKeyDown);
   });
   return (
-    <div className="game-board">
-      {board.map((row, i) => {
-        return (
-          <div key={`row-${i}`} className="row">
-            {row.map((cell, j) => (
-              <Cell key={`cell-${i}-${j}`} number={cell} />
-            ))}
-          </div>
-        );
-      })}
-    </div>
+      <div className="game-board">
+        {board.map((row, i) => {
+          return (
+            <div key={`row-${i}`} className="row">
+              {row.map((cell, j) => (
+                <Cell key={`cell-${i}-${j}`} number={cell} />
+              ))}
+            </div>
+          );
+        })}
+      </div>
   );
 };
 

@@ -2,12 +2,15 @@ import "./App.css";
 import GameBoard from "./components/GameBoard";
 import Score from "./components/Score";
 import HowTo from "./components/HowTo";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch ,useLocation} from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
-      <Switch>
+      <AnimatePresence>
+      <Switch location={location} key={location.key}>
         <Route
           path="/game"
           component={() => (
@@ -19,6 +22,7 @@ function App() {
         />
         <Route exact path="/" component={HowTo} />
       </Switch>
+      </AnimatePresence>
     </div>
   );
 }
