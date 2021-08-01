@@ -18,7 +18,7 @@ export default function HowTo() {
           <div className="form">
             <h2>How to Play</h2>
 
-            <FaGamepad color="black" size="3rem"/>
+            <FaGamepad color="rgba(255, 255, 255, 0.5)" size="3vh"/>
             <form action="">
               <div className="inputBx">
                 <span>
@@ -29,7 +29,7 @@ export default function HowTo() {
                   </p></span>
               </div>
             </form>
-                    <h1>Let's Play →</h1>
+                    <h1>Let's Play</h1>
           </div>
         </div>
       </div>
