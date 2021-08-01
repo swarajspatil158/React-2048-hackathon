@@ -3,30 +3,39 @@ import {
   moveLeft,
   moveRight,
   moveUp,
+  generateRandom,
   moveDown,
 } from "./functions";
 
-// let board = [
-//   [2, 2, 4, 0],
-//   [4, 0, 8, 4],
-//   [8, 0, 8, 4],
-//   [8, 4, 0, 8],
-// ];
-// console.table(rotateRight(board));
+let initialBoard = generateBoard();
+initialBoard = generateRandom(initialBoard);
+let highScore = localStorage.getItem("highScore");
 
-const gameReducer = (state = { board: generateBoard() }, action) => {
-  switch (action.type) {
-    case "MOVE_LEFT":
-      return { ...state, board: moveLeft(action.payload) };
-    case "MOVE_RIGHT":
-      return { ...state, board: moveRight(action.payload) };
-    case "MOVE_UP":
-      return { ...state, board: moveUp(action.payload) };
-    case "MOVE_DOWN":
-      return { ...state, board: moveDown(action.payload) };
-    default:
-      return state;
+let initialState = { board: initialBoard, score: 0, highScore: highScore };
+
+const gameReducer = (state = initialState, action) => {
+  let [newBoard, mergeScore, newScore] = [[], 0, 0];
+  let newState = { ...state };
+
+  if (action.type === "MOVE_LEFT") {
+    [newBoard, mergeScore] = moveLeft(action.payload);
+    newState = { ...state, board: newBoard, score: newScore };
+  } else if (action.type === "MOVE_RIGHT") {
+    [newBoard, mergeScore] = moveRight(action.payload);
+    newState = { ...state, board: newBoard, score: newScore };
+  } else if (action.type === "MOVE_UP") {
+    [newBoard, mergeScore] = moveUp(action.payload);
+    newState = { ...state, board: newBoard, score: newScore };
+  } else if (action.type === "MOVE_DOWN") {
+    [newBoard, mergeScore] = moveDown(action.payload);
+    newState = { ...state, board: newBoard, score: newScore };
   }
+  newScore = state.score + mergeScore;
+  if (newScore > state.highScore) {
+    newState.highScore = newScore;
+    localStorage.setItem("highScore", newScore);
+  }
+  return newState;
 };
 
 export default gameReducer;

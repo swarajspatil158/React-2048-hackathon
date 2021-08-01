@@ -1,3 +1,89 @@
 .App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Sans Unicode";
+  background: #43cea2;
+  background: -webkit-linear-gradient(to left, #43cea2, #185a9d);
+  background: linear-gradient(to left, #43cea2, #185a9d);
+}
+.game-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 4px;
+  background: #ff6900;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.cell {
+  height: 100px;
+  width: 100px;
+  background-color: #303030;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-2 {
+  background-color: #50c8ff;
+}
+
+.color-4 {
+  background-color: green;
+}
+
+.color-8 {
+  background-color: red;
+}
+
+.color-16 {
+  background-color: orange;
+}
+
+.color-32 {
+  background-color: yellow;
+}
+
+.color-64 {
+  background-color: blue;
+}
+
+.color-128 {
+  background-color: purple;
+}
+
+.color-256 {
+  background-color: pink;
+}
+
+.color-512 {
+  background-color: #50c8ff;
+}
+
+.color-1024 {
+  background-color: green;
+}
+
+.color-2048 {
+  background-color: blue;
+}
+
+.number {
+  color: #fff;
+  font-size: 35px;
+}
+
+.score {
   text-align: center;
+  margin-bottom: 20px;
 }

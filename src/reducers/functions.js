@@ -58,15 +58,17 @@ const compress = (board) => {
 
 // merges the board to the left if possible
 const merge = (board) => {
+  let score = 0;
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[i].length - 1; j++) {
       if (board[i][j] > 0 && board[i][j] === board[i][j + 1]) {
+        score += board[i][j] * 2;
         board[i][j] = board[i][j] * 2;
         board[i][j + 1] = 0;
       }
     }
   }
-  return board;
+  return [board, score];
 };
 
 // reverses the board
@@ -117,14 +119,20 @@ const hasDiff = (board, newBoard) => {
   return false;
 };
 
-const moveFunction = (board, main, process, result) => {
-  const nBoard1 = main(board);
-  const nBoard2 = process(nBoard1);
-  const resBoard = result(nBoard2);
-  return generateRandom(resBoard);
+const moveLeft = (board) => {
+  const nBoard1 = compress(board);
+  const [nBoard2, score] = merge(nBoard1);
+  const nBoard3 = compress(nBoard2);
+  return [generateRandom(nBoard3), score];
 };
 
-const moveLeft = (board) => moveFunction(board, compress, merge, compress);
+const moveFunction = (board, main, process, result) => {
+  const nBoard1 = main(board);
+  const [nBoard2, score] = process(nBoard1);
+  const resBoard = result(nBoard2);
+  return [resBoard, score];
+};
+
 const moveRight = (board) => moveFunction(board, reverse, moveLeft, reverse);
 const moveUp = (board) =>
   moveFunction(board, rotateLeft, moveLeft, rotateRight);
@@ -136,10 +144,10 @@ const isGameWon = (board) => hasValue(board, 2048);
 
 const isGameLost = (board) =>
   !(
-    hasDiff(board, moveLeft(board)) ||
-    hasDiff(board, moveRight(board)) ||
-    hasDiff(board, moveUp(board)) ||
-    hasDiff(board, moveDown(board))
+    hasDiff(board, moveLeft(board)[0]) ||
+    hasDiff(board, moveRight(board)[0]) ||
+    hasDiff(board, moveUp(board)[0]) ||
+    hasDiff(board, moveDown(board)[0])
   );
 
 const isGameOver = (board) => {
@@ -155,4 +163,12 @@ const isGameOver = (board) => {
   return [over, reason];
 };
 
-export { generateBoard, moveLeft, moveRight, moveUp, moveDown, isGameOver };
+export {
+  generateBoard,
+  generateRandom,
+  moveLeft,
+  moveRight,
+  moveUp,
+  moveDown,
+  isGameOver,
+};
