@@ -119,20 +119,31 @@ const hasDiff = (board, newBoard) => {
   return false;
 };
 
+// creating the move left function
 const moveLeft = (board) => {
+  // firstly we compress the board to the left
   const nBoard1 = compress(board);
+  // then we merge if any two cells are same
   const [nBoard2, score] = merge(nBoard1);
+  // then we compress the board once more
   const nBoard3 = compress(nBoard2);
+  // then we adds a new 2 block at random position
   return [generateRandom(nBoard3), score];
 };
 
+// for making right,up,down we have some repeated code like firstly we have to do something to make it happen for move left then perform moveleft and then revert to its original state
 const moveFunction = (board, main, process, result) => {
+  // doing some pre required adjustment
   const nBoard1 = main(board);
+  // performing move left function
   const [nBoard2, score] = process(nBoard1);
+  // doing some post required adjustment
   const resBoard = result(nBoard2);
+  // returning the resultant board with score
   return [resBoard, score];
 };
 
+// using moveFunction for creating moveRight, moveUp, moveDown function
 const moveRight = (board) => moveFunction(board, reverse, moveLeft, reverse);
 const moveUp = (board) =>
   moveFunction(board, rotateLeft, moveLeft, rotateRight);
@@ -142,6 +153,7 @@ const moveDown = (board) =>
 // checks if the board contains 2048 so the game is ended and the user has won the game
 const isGameWon = (board) => hasValue(board, 2048);
 
+// so we check if there is any possibility to merge the block if yes then our game is not over otherwise if no possibility to merge blocks then our game is over and we lose
 const isGameLost = (board) =>
   !(
     hasDiff(board, moveLeft(board)[0]) ||
@@ -150,6 +162,7 @@ const isGameLost = (board) =>
     hasDiff(board, moveDown(board)[0])
   );
 
+// checking if game is over either by winning or losing
 const isGameOver = (board) => {
   let over = false,
     reason = "";
