@@ -93,6 +93,9 @@ background:rgba(64,180,249);
 span{
   margin:1vh 1vw;
 }
+a{
+  font-size: 7vh;
+}
 a:visited,a:link,a:active,a:focus{
   text-decoration: none;
   border-color:none;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./HowTo.css";
+import { useEffect,useRef } from "react";
 import { FaGamepad } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
@@ -7,7 +8,25 @@ import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import {motion} from 'framer-motion';
+import VanillaTilt from "vanilla-tilt";
 
+// tilt component
+function Tilt(props) {
+  const { options, ...rest } = props;
+  const tilt = useRef(null);
+
+  useEffect(() => {
+    VanillaTilt.init(tilt.current, options);
+  }, [options]);
+
+  return <div ref={tilt} {...rest} />;
+}
+//  tilt object
+  const options = {
+    scale: 1.2,
+    speed: 1000,
+    max: 30
+  };
 export default function HowTo() {
   return (
     <>
@@ -36,9 +55,9 @@ export default function HowTo() {
                 </div>
               </form>
                 <FaArrowDown class="down" color="rgba(255, 255, 255, 0.5)" size="4vh" />
-              <motion.h1 whileHover={{scale:2}}>
+              <Tilt h1 options={options}>
                 <Link to="/game">Let's Play</Link>
-              </motion.h1>
+              </Tilt>
             </motion.div>
           </div>
         </div>

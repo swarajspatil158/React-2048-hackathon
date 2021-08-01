@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { moveDown, moveLeft, moveRight, moveUp } from "../actions/index";
-import { useEffect } from "react";
+import { useEffect,useRef } from "react";
 import { isGameOver } from "../reducers/functions";
+import VanillaTilt from "vanilla-tilt";
 
 // a cell component
 const Cell = ({ number }) => (
@@ -10,7 +11,17 @@ const Cell = ({ number }) => (
     {number > 0 ? number : ""}
   </div>
 );
+// tilt component
+function Tilt(props) {
+  const { options, ...rest } = props;
+  const tilt = useRef(null);
 
+  useEffect(() => {
+    VanillaTilt.init(tilt.current, options);
+  }, [options]);
+
+  return <div ref={tilt} {...rest} />;
+}
 const GameBoard = () => {
   // getting the board
   const board = useSelector((state) => state.gameBoard).board;
@@ -41,14 +52,19 @@ const GameBoard = () => {
       alert(`game is over! you ${reason}`);
     }
   };
-
+  //  tilt object
+  const options = {
+    scale: 1.2,
+    speed: 1000,
+    max: 30
+  };
   //   addition and removal of event listener for moves
   useEffect(() => {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   });
   return (
-    <div className="game-board">
+    <Tilt className="game-board" options={options}>
       {/* placement of board */}
       {board.map((row, i) => {
         return (
@@ -59,7 +75,7 @@ const GameBoard = () => {
           </div>
         );
       })}
-    </div>
+    </Tilt>
   );
 };
 

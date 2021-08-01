@@ -5,6 +5,7 @@ import { newGame } from "../actions/index";
 import GameBoard from "./GameBoard";
 import Score from "./Score";
 
+
 const Game = () => {
   // dispatch function for creating newGame
   const dispatch = useDispatch();
