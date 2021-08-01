@@ -6,6 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {motion} from 'framer-motion';
 
 export default function HowTo() {
   return (
@@ -13,31 +14,32 @@ export default function HowTo() {
       <section>
         <div className="box">
           <div className="container">
-            <div className="form">
-              <h3 className="title">2048</h3>
+            <motion.div className="form" initial={{opacity:0}} animate={{opacity:1}}
+                    transition={{delay:0.3,duration:1.5}}>
+              <h3 className="title" >2048</h3>
               <h2>How to Play</h2>
 
-              <FaGamepad color="rgba(255, 255, 255, 0.5)" size="3vh" />
+              <FaGamepad color="rgba(255, 255, 255, 0.5)" size="3vh"/>
               <FaArrowUp color="rgba(255, 255, 255, 0.5)" size="4vh" />
 
               <form action="">
                 <div className="inputBx">
                   <FaArrowLeft color="rgba(255, 255, 255, 0.5)" size="4vh" />
-                  <span>
-                    <p>
+                  <motion.span >
+                    <motion.p whileHover={{scale:1.1}}>
                       Use your arrow keys to move the tiles.Tiles with the same
                       number merge into one when they touch. Add them up to
                       reach 2048 !
-                    </p>
-                  </span>
+                    </motion.p>
+                  </motion.span>
                   <FaArrowRight color="rgba(255, 255, 255, 0.5)" size="4vh" />
                 </div>
-                <FaArrowDown color="rgba(255, 255, 255, 0.5)" size="4vh" />
               </form>
-              <h1>
+                <FaArrowDown class="down" color="rgba(255, 255, 255, 0.5)" size="4vh" />
+              <motion.h1 whileHover={{scale:2}}>
                 <Link to="/game">Let's Play</Link>
-              </h1>
-            </div>
+              </motion.h1>
+            </motion.div>
           </div>
         </div>
       </section>

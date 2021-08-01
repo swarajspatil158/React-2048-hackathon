@@ -51,12 +51,17 @@ background:rgba(64,180,249);
   color: rgb(254, 254, 254, 0.8);
   letter-spacing: 0.2vw;
   margin-bottom: 1vh;
+  margin-top: 0;
+}
+.form h3 {
+  margin:0;
 }
 .form .inputBx {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 1vh;
   width: 100vw;
   margin-bottom: 2vh;
 }
@@ -84,4 +89,12 @@ background:rgba(64,180,249);
     color: rgba(0, 0, 0, 0.5);
     font-size: 4.5vh;
     font-weight: bold;
+}
+span{
+  margin:1vh 1vw;
+}
+a:visited,a:link,a:active,a:focus{
+  text-decoration: none;
+  border-color:none;
+  color: rgba(0, 0, 0, 0.5);
 }
