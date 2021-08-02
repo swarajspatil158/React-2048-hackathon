@@ -128,7 +128,7 @@ const GameBoard = () => {
           </div>
         );
       })}
-    </Tilt>
+      </Tilt>
   );
 };
 
