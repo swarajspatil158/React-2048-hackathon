@@ -6,6 +6,7 @@ This project was made by Team Aditya for [Devsnest](https://devsnest.in) Hackath
 **2048** is single player sliding tile puzzle video game.
 
 ## Live Demo :joystick:
+![demo](./2048-video-game.gif)
 
 ## What is 2048 :question:
 **2048** is played on a plain `4×4` grid, with numbered tiles that slide when a player moves them using the `4 arrow keys`. Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided.
