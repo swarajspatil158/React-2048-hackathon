@@ -11,6 +11,8 @@ const Cell = ({ number }) => (
     {number > 0 ? number : ""}
   </div>
 );
+
+
 // tilt component
 function Tilt(props) {
   const { options, ...rest } = props;
@@ -65,7 +67,6 @@ const GameBoard = () => {
   });
   return (
     <Tilt className="game-board" options={options}>
-      {/* placement of board */}
       {board.map((row, i) => {
         return (
           <div key={`row-${i}`} className="row">

@@ -33,8 +33,8 @@ export default function HowTo() {
       <section>
         <div className="box">
           <div className="container">
-            <motion.div className="form" initial={{opacity:0}} animate={{opacity:1}}
-                    transition={{delay:0.3,duration:1.5}}>
+            <motion.div className="form" initial={{opacity:0}} animate={{opacity:1,scale:1.2}}
+                    transition={{delay:0.2,duration:0.5}}>
               <h3 className="title" >2048</h3>
               <h2>How to Play</h2>
 
