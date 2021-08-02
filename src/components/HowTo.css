@@ -19,7 +19,6 @@ background:rgba(64,180,249);
 
 .container {
   position: relative;
-  /* padding: 6vh; */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -63,7 +62,6 @@ background:rgba(64,180,249);
   justify-content: center;
   border-radius: 1vh;
   width: 100vw;
-  margin-bottom: 2vh;
 }
 .form .inputBx span p {
   display: flex;
@@ -80,7 +78,7 @@ background:rgba(64,180,249);
   border-radius: 1vh;
   color: rgb(0, 0, 0, 0.5);
   font-family: "Poppins", sans-serif;
-  font-size: 1.2vh;
+  font-size: 0.7em;
   font-weight: bold;
   box-shadow: 0 1vw 1vh rgba(0, 0, 0, 0.05);
 }
