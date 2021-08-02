@@ -44,6 +44,58 @@ const GameBoard = () => {
 
   //   addition and removal of event listener for moves
   useEffect(() => {
+    
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchmove', handleTouchMove, false);
+
+    var xDown = null;
+    var yDown = null;
+
+    function getTouches(evt) {
+      return evt.touches ||             // browser API
+        evt.originalEvent.touches; // jQuery
+    }
+
+    function handleTouchStart(evt) {
+      const firstTouch = getTouches(evt)[0];
+      xDown = firstTouch.clientX;
+      yDown = firstTouch.clientY;
+    };
+
+    function handleTouchMove(evt) {
+      if (!xDown || !yDown) {
+        return;
+      }
+
+      var xUp = evt.touches[0].clientX;
+      var yUp = evt.touches[0].clientY;
+
+      var xDiff = xDown - xUp;
+      var yDiff = yDown - yUp;
+
+      if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+        if (xDiff > 0) {
+          /*to left swipe*/
+          dispatch(moveLeft(board));
+        } else {
+          /* to right swipe */
+          dispatch(moveRight(board));
+        }
+      } else {
+        if (yDiff > 0) {
+          /* to up swipe */
+          dispatch(moveUp(board));
+          
+        } else {
+          /* to down swipe */
+          dispatch(moveDown(board));
+        }
+      }
+      /* reset values */
+      xDown = null;
+      yDown = null;
+    };
+
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   });
