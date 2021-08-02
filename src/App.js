@@ -1,6 +1,9 @@
 import "./App.css";
 import HowTo from "./components/HowTo";
-import { Route, Switch ,useLocation} from "react-router-dom";
+import {
+  Route, 
+  Switch ,
+  useLocation} from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Game from "./components/Game";
 
@@ -8,6 +11,7 @@ function App() {
   const location = useLocation();
   return (
     <div className="App">
+      
       <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.key}>
         <Route
@@ -17,7 +21,7 @@ function App() {
         <Route exact path="/" component={HowTo} />
       </Switch>
       </AnimatePresence>
-    </div>
+      </div>
   );
 }
 

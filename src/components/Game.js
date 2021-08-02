@@ -51,7 +51,7 @@ const Game = () => {
       <GameBoard />
       <footer>
         <div>Made by Team Aditya ✨</div>
-        <div>Contributers - <a href="https://github.com/swarajspatil158">Swaraj</a>, <a href="https://github.com/siddharth20190428/">Siddharth</a>, <a href="https://github.com/Dhrumil0723/">Venom</a>, <a href="https://github.com/abhaygupta08">Abhay</a></div>
+        <div>Contributers - <a href="https://github.com/swarajspatil158">Swaraj</a>, <a href="https://github.com/siddharth20190428/">Siddharth</a>, <a href="https://github.com/Dhrumil0723/">Venom</a>,<a href="https://github.com/lord-Rheagar/">Tyrion</a>, <a href="https://github.com/abhaygupta08">Abhay</a></div>
       </footer>
     </motion.div>
   );
