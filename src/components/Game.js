@@ -4,7 +4,6 @@ import { newGame } from "../actions/index";
 import {motion} from "framer-motion";
 import GameBoard from "./GameBoard";
 import Score from "./Score";
-import "./Game.css";
 
 //  transition motion
 const pageTranstion = {
