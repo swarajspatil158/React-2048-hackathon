@@ -100,6 +100,28 @@
   font-size: 2vh;
   font-weight: bold;
 }
+.scoreBoard{
+  position: absolute;
+  right: 0;
+  top: 15px;
+  display:flex;
+  transition: right 2s;
+}
+.scoreBoard > div{ 
+  padding:10px;
+  margin:0 10px; 
+  text-align: center;
+  background: rgba( 255, 255, 255, 0.15 );  
+  backdrop-filter: blur( 8.0px );
+  -webkit-backdrop-filter: blur( 8.0px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+@media only screen and (min-width: 600px) {
+  .scoreBoard {
+    right:20%;
+  }
+}
+
 
 footer{
   position:fixed;
@@ -120,11 +142,15 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   position:absolute;
   left:0;
   top:0;
-  color: rgba( 255, 255, 255, 0.65 );  
   cursor:pointer;
   padding:20px;
 }
-
+.go-to-home a svg{  
+  color: rgba( 255, 255, 255, 0.45 );  
+}
+.go-to-home a svg:hover{  
+  color: rgba( 255, 255, 255, 0.65 );  
+}
 .game-controls button{
   margin: 10px 5px;
   background: rgba( 255, 255, 255, 0.15 );  

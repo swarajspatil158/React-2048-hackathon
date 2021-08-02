@@ -7,6 +7,8 @@ import Score from "./Score";
 import HowToModal from "./HowToModal.jsx";
 import "./HowToModal.css";
 import { FaHome } from "react-icons/fa";
+import ShareModal from "./ShareModal.js";
+import "./ShareModal.css";
 //  transition motion
 const pageTranstion = {
   in: {
@@ -21,7 +23,7 @@ const pageTranstion = {
 
 const Game = () => {
   const [ModalIsOpen, setModalIsOpen] = useState(false);
-  // const [BoardLocked, setBoardLocked] = useState(false);
+  const [isShareOn,setIsShareOn] = useState(false);
   // dispatch function for creating newGame
   const dispatch = useDispatch();
   return (
@@ -37,8 +39,13 @@ const Game = () => {
         (<HowToModal setModalIsOpen={setModalIsOpen}></HowToModal>)
         :null
         }
-        <button onClick={() => dispatch(newGame())}>NewGame</button>
-        <button>Share</button>
+        <button onClick={() => dispatch(newGame())}>New Game</button>
+        <button onClick={() => setIsShareOn(true)}>Share</button>
+        {isShareOn ?
+          (<ShareModal setIsShareOn={setIsShareOn}></ShareModal>)
+          : null
+        }
+
       </div>
       <Score />
       <GameBoard />
