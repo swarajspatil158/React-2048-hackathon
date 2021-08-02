@@ -6,8 +6,9 @@ const Score = () => {
   const score = useSelector((state) => state.gameBoard).score;
   const highScore = useSelector((state) => state.gameBoard).highScore;
   return (
-    <div>
-      {score} {highScore}
+    <div className="scoreBoard">
+      <div>SCORE<br></br>{score}</div> 
+      <div>HIGHSCORE<br></br>{highScore}</div>
     </div>
   );
 };

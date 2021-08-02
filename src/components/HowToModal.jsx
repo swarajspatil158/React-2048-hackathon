@@ -1,7 +1,6 @@
 const HowToModal = ({setModalIsOpen})=>{
     return(<>
         <div className="how-to-modal" onClick={() => setModalIsOpen(false)}>
-        
     </div>
         <div className="Modal-main-box">
             <div id="Modal-Close" onClick={() => setModalIsOpen(false)}>X</div>

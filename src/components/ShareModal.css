@@ -1,0 +1,64 @@
+.share-modal{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(32, 32, 32, 0.301);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.share-main-box{
+    color:white;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    overflow: visible;
+    width:clamp(50vw,30vw,300px);
+    height:clamp(50vh,30vh,300px);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8.0px );
+    -webkit-backdrop-filter: blur( 8.0px );
+    border-radius: 10px;    
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index:3;
+}
+
+#Modal-Close{
+    width: 20px;
+    height:20px;
+    position: absolute;
+    right:-10px;
+    top:-10px;
+    z-index: 1;
+    background: #ffffff8a;
+    text-align:center;
+    line-height:20px;
+    border-radius: 50%;
+    cursor:pointer;
+}
+
+.share-main-box > h2,.share-main-box > p{
+    margin: 20px 0px;
+    width:80%;
+}
+.share-main-box > h2{
+    text-decoration: underline;
+    padding-left: 10%;
+}
+
+.social-btn{
+  font-size: 1.8em;
+  margin:3px;
+  color:rgba(255, 255, 255, 0.734) !important;
+}
+.social-btn:hover{
+  color:rgba(255, 255, 255, 1) !important;
+}
