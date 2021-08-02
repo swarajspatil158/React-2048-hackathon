@@ -9,6 +9,16 @@ import { FaArrowDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import {motion} from 'framer-motion';
 import VanillaTilt from "vanilla-tilt";
+const pageTranstion = {
+  in: {
+    opacity: 1,
+    y: 0,
+  },
+  out: {
+    opacity: 0,
+    y: "-100%"
+  }
+}
 
 // tilt component
 function Tilt(props) {
@@ -30,14 +40,15 @@ function Tilt(props) {
 export default function HowTo() {
   return (
     <>
-      <section>
+      <motion.section
+      initial="out"
+      animate="in"
+      exit="out" variants={pageTranstion}>
         <div className="box">
           <div className="container">
             <motion.div className="form" initial={{opacity:0}} animate={{opacity:1,scale:1.2}}
                     transition={{delay:0.2,duration:0.5}}>
               <h3 className="title" >2048</h3>
-              <h2>How to Play</h2>
-
               <FaGamepad color="rgba(255, 255, 255, 0.5)" size="3vh"/>
               <FaArrowUp color="rgba(255, 255, 255, 0.5)" size="4vh" />
 
@@ -46,9 +57,7 @@ export default function HowTo() {
                   <FaArrowLeft color="rgba(255, 255, 255, 0.5)" size="4vh" />
                   <motion.span >
                     <motion.p whileHover={{scale:1.1}}>
-                      Use your arrow keys to move the tiles.Tiles with the same
-                      number merge into one when they touch. Add them up to
-                      reach 2048 !
+                      2048 is a popular single-player game for Web and mobile. It’s a type of “sliding block puzzle”.
                     </motion.p>
                   </motion.span>
                   <FaArrowRight color="rgba(255, 255, 255, 0.5)" size="4vh" />
@@ -61,7 +70,7 @@ export default function HowTo() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }

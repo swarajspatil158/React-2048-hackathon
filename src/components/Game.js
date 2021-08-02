@@ -6,7 +6,7 @@ import GameBoard from "./GameBoard";
 import Score from "./Score";
 import HowToModal from "./HowToModal.jsx";
 import "./HowToModal.css";
-
+import { FaHome } from "react-icons/fa";
 //  transition motion
 const pageTranstion = {
   in: {
@@ -30,14 +30,22 @@ const Game = () => {
       animate="in"
     exit="out" variants={pageTranstion}
       className="game">
-      <button onClick={()=>{setModalIsOpen(true)}}>How to Play</button>
-      {ModalIsOpen?
-      (<HowToModal setModalIsOpen={setModalIsOpen}></HowToModal>)
-      :null
-      }
-      <button onClick={() => dispatch(newGame())}>NewGame</button>
+      <div className="go-to-home"><a href="/"> <FaHome></FaHome></a></div>
+      <div className="game-controls">
+        <button onClick={()=>{setModalIsOpen(true)}}>How to Play</button>
+        {ModalIsOpen?
+        (<HowToModal setModalIsOpen={setModalIsOpen}></HowToModal>)
+        :null
+        }
+        <button onClick={() => dispatch(newGame())}>NewGame</button>
+        <button>Share</button>
+      </div>
       <Score />
       <GameBoard />
+      <footer>
+        <div>Made by Team Aditya ✨</div>
+        <div>Contributers - <a href="https://github.com/swarajspatil158">Swaraj</a>, <a href="https://github.com/siddharth20190428/">Siddharth</a>, <a href="https://github.com/Dhrumil0723/">Venom</a>, <a href="https://github.com/abhaygupta08">Abhay</a></div>
+      </footer>
     </motion.div>
   );
 };
