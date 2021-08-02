@@ -14,7 +14,7 @@ This project was made by Team Aditya for [Devsnest](https://devsnest.in) Hackath
 > `Node Js` - you can download it from [here](https://nodejs.org/en/).
 
 ### - Clone the project
->``` git clone  https://github.com/ALTDeleted/DEVSNEST-HACK-2.git ```
+>``` git clone  https://github.com/siddharth20190428/React-2048-hackathon.git ```
 
 ### - Run the project
 > - Open directory where you have cloned the repo and type : 
