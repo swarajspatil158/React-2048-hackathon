@@ -48,7 +48,7 @@ export default function HowTo() {
           <div className="container">
             <motion.div className="form" initial={{opacity:0}} animate={{opacity:1,scale:1.2}}
                     transition={{delay:0.2,duration:0.5}}>
-              <h3 className="title" >2048</h3>
+              <div className="title" >2048</div>
               <FaGamepad color="rgba(255, 255, 255, 0.5)" size="3vh"/>
               <FaArrowUp color="rgba(255, 255, 255, 0.5)" size="4vh" />
 

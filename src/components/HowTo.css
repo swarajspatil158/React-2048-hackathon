@@ -29,10 +29,10 @@ background:rgba(64,180,249);
   border-radius: 1vh;
   box-shadow: 0 2vw 4vh rgba(0, 0, 0, 0.2);
 }
-.form h3 {
-  font-size: 20vh;
+.title {
+  font-weight: bolder;
   color:rgba(255, 255, 255, 0.2);
-  padding-bottom: 0.1vh;
+
 }
 
 .form {
@@ -51,9 +51,6 @@ background:rgba(64,180,249);
   letter-spacing: 0.2vw;
   margin-bottom: 1vh;
   margin-top: 0;
-}
-.form h3 {
-  margin:0;
 }
 .form .inputBx {
   position: relative;
@@ -74,13 +71,13 @@ background:rgba(64,180,249);
   border: none;
   border: 1vh solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.2);
-  padding: 1vh 2vw;
+  padding: 1vh 2vh;
   border-radius: 1vh;
   color: rgb(0, 0, 0, 0.5);
   font-family: "Poppins", sans-serif;
-  font-size: 0.7em;
+  font-size: 1.7vh;
   font-weight: bold;
-  box-shadow: 0 1vw 1vh rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3vh 3vh rgba(0, 0, 0, 0.05);
 }
 
 .form h1{

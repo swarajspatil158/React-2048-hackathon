@@ -151,6 +151,10 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 .go-to-home a svg:hover{  
   color: rgba( 255, 255, 255, 0.65 );  
 }
+
+.game-controls{
+  padding-bottom: 9vh;
+}
 .game-controls button{
   margin: 10px 5px;
   background: rgba( 255, 255, 255, 0.15 );  
@@ -171,5 +175,5 @@ footer > div a{
 
 
 .title{
-  font-size:4em !important;
+  font-size:13vh !important;
 }
