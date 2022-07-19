@@ -57,7 +57,7 @@ export default function HowTo() {
                   <FaArrowLeft color="rgba(255, 255, 255, 0.5)" size="4vh" />
                   <motion.span >
                     <motion.p whileHover={{scale:1.1}}>
-                      2048 is a popular single-player game for Web and mobile. It’s a type of “sliding block puzzle”.
+                      Use arrow keys on keyboard and swipe controls on mobile to play. Use keyboard for best experience.
                     </motion.p>
                   </motion.span>
                   <FaArrowRight color="rgba(255, 255, 255, 0.5)" size="4vh" />
